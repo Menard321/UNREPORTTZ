@@ -1,0 +1,740 @@
+[
+  {
+    "id": "udsm-field-report",
+    "institution": "University of Dar es Salaam",
+    "scope": {
+      "faculty": null,
+      "department": null,
+      "programmeLevel": "bachelor",
+      "yearOfTraining": null
+    },
+    "matching": {
+      "appliesToOtherCoursesOfInstitution": true,
+      "notice": "Standard UDSM Field Training Template"
+    },
+    "reportTypeKey": "field-training",
+    "labels": {
+      "reportName": "Field Practical Training Report",
+      "photoLabel": "Figure",
+      "figureListTitle": "List of Figures",
+      "abbreviationsTitle": "List of Abbreviations"
+    },
+    "source": {
+      "file": "udsm-guideline-2025.pdf",
+      "kind": "official_guideline",
+      "detail": "Directorate of Undergraduate Studies UDSM Guidelines",
+      "pageSize": "A4"
+    },
+    "verification": {
+      "status": "from_guideline_unverified_date",
+      "note": "Mapped from official UDSM undergraduate prospectus and field report format"
+    },
+    "cover": {
+      "border": "none",
+      "labelStyle": "center",
+      "lines": [
+        {
+          "field": "institution.name",
+          "template": "{institution.name|upper}",
+          "style": "bold center 16pt"
+        },
+        {
+          "field": "unit.name",
+          "template": "{unit.name|upper}",
+          "style": "bold center 14pt"
+        },
+        {
+          "field": "department.name",
+          "template": "DEPARTMENT OF {department.name|upper}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "report.title",
+          "template": "{report.title|upper}",
+          "style": "bold center 14pt margin-y"
+        },
+        {
+          "field": "static.by",
+          "template": "BY",
+          "style": "bold center"
+        },
+        {
+          "field": "student.name",
+          "template": "{student.surnameFirst|upper}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "student.regNo",
+          "template": "REGISTRATION NO: {student.regNo}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "degree.fulfillment",
+          "template": "A FIELD PRACTICAL TRAINING REPORT SUBMITTED IN PARTIAL FULFILLMENT OF THE REQUIREMENTS FOR THE DEGREE OF {programme.name|upper} OF THE {institution.name|upper}",
+          "style": "center 11pt margin-y",
+          "addedByReportWise": true
+        },
+        {
+          "field": "submission.monthYear",
+          "template": "{submission.monthYear|upper}",
+          "style": "bold center 12pt"
+        }
+      ]
+    },
+    "frontMatter": [
+      { "key": "declaration", "numbering": "lower_roman", "title": "DECLARATION" },
+      { "key": "copyright", "numbering": "lower_roman", "title": "COPYRIGHT" },
+      { "key": "abstract", "numbering": "lower_roman", "title": "ABSTRACT" },
+      { "key": "dedication", "numbering": "lower_roman", "title": "DEDICATION" },
+      { "key": "acknowledgements", "numbering": "lower_roman", "title": "ACKNOWLEDGEMENTS" },
+      { "key": "toc", "numbering": "lower_roman", "title": "TABLE OF CONTENTS" },
+      { "key": "list_of_tables", "numbering": "lower_roman", "title": "LIST OF TABLES" },
+      { "key": "list_of_figures", "numbering": "lower_roman", "title": "LIST OF FIGURES" },
+      { "key": "list_of_abbreviations", "numbering": "lower_roman", "title": "LIST OF ABBREVIATIONS" }
+    ],
+    "chapters": [
+      {
+        "title": "CHAPTER ONE: INTRODUCTION & HOST ORGANIZATION PROFILE",
+        "topic": "org_background",
+        "sections": [
+          "1.1 Background of Field Practical Training",
+          "1.2 Profile of Host Organization",
+          "1.3 Vision and Mission Statement",
+          "1.4 Organizational Structure and Reporting Lines"
+        ]
+      },
+      {
+        "title": "CHAPTER TWO: PRACTICAL ACTIVITIES & PROBLEM SOLVING",
+        "topic": "tasks_activities",
+        "sections": [
+          "2.1 Overview of Technical Tasks Performed",
+          "2.2 Main Technical Challenge Identified",
+          "2.3 Proposed Engineering/Technical Solution",
+          "2.4 Methodology and System Architecture"
+        ]
+      },
+      {
+        "title": "CHAPTER THREE: EVALUATION, CHALLENGES & SKILLS ACQUIRED",
+        "topic": "challenges",
+        "sections": [
+          "3.1 Challenges Encountered and Solutions Applied",
+          "3.2 Practical Skills and Knowledge Gained",
+          "3.3 Theory vs Practical Workplace Application"
+        ]
+      },
+      {
+        "title": "CHAPTER FOUR: CONCLUSIONS & RECOMMENDATIONS",
+        "topic": "conclusion",
+        "sections": [
+          "4.1 General Conclusion",
+          "4.2 Recommendations to the Host Organization",
+          "4.3 Recommendations to the University"
+        ]
+      }
+    ],
+    "references": {
+      "style": "IEEE",
+      "note": "IEEE Numeric standard format required"
+    },
+    "appendices": [
+      { "key": "logbook_summary", "title": "Weekly Logbook Summary Sheets", "needsUserUpload": false },
+      { "key": "site_photos", "title": "Field Work Photos and Network Diagrams", "needsUserUpload": true }
+    ],
+    "formatting": {
+      "measured": true,
+      "fontFamily": "Times New Roman",
+      "fontSizeBody": "12pt",
+      "lineSpacing": "1.5",
+      "alignment": "justified",
+      "margins": "Top: 2.5cm, Bottom: 2.5cm, Left: 3.5cm, Right: 2.5cm",
+      "pageNumberingFront": "lower_roman",
+      "pageNumberingBody": "arabic"
+    },
+    "observations": [
+      "Avoid repeating generic institutional history in chapter 1"
+    ]
+  },
+  {
+    "id": "cbe-field-report",
+    "institution": "College of Business Education",
+    "scope": {
+      "faculty": null,
+      "department": null,
+      "programmeLevel": "bachelor",
+      "yearOfTraining": null
+    },
+    "matching": {
+      "appliesToOtherCoursesOfInstitution": true,
+      "notice": "Standard CBE Field Attachment Format"
+    },
+    "reportTypeKey": "field-training",
+    "labels": {
+      "reportName": "Field Attachment Report",
+      "photoLabel": "Figure",
+      "figureListTitle": "List of Figures",
+      "abbreviationsTitle": "Abbreviations & Acronyms"
+    },
+    "source": {
+      "file": "cbe-field-guidelines-2024.pdf",
+      "kind": "department_template",
+      "detail": "CBE Practical Attachment Guidelines",
+      "pageSize": "A4"
+    },
+    "verification": {
+      "status": "department_template_unverified_date",
+      "note": "Extracted from CBE department guidelines"
+    },
+    "cover": {
+      "border": "none",
+      "labelStyle": "center",
+      "lines": [
+        {
+          "field": "institution.name",
+          "template": "{institution.name|upper}",
+          "style": "bold center 16pt"
+        },
+        {
+          "field": "unit.name",
+          "template": "{unit.name|upper}",
+          "style": "bold center 14pt"
+        },
+        {
+          "field": "department.name",
+          "template": "DEPARTMENT OF {department.name|upper}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "report.title",
+          "template": "{report.title|upper}",
+          "style": "bold center 14pt margin-y"
+        },
+        {
+          "field": "static.by",
+          "template": "BY",
+          "style": "bold center"
+        },
+        {
+          "field": "student.name",
+          "template": "{student.surnameFirst|upper}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "student.regNo",
+          "template": "REG. NO: {student.regNo}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "submission.fulfillment",
+          "template": "FIELD ATTACHMENT REPORT SUBMITTED TO THE COLLEGE OF BUSINESS EDUCATION FOR THE DEGREE OF {programme.name|upper}",
+          "style": "center 11pt margin-y"
+        },
+        {
+          "field": "submission.monthYear",
+          "template": "{submission.monthYear|upper}",
+          "style": "bold center 12pt"
+        }
+      ]
+    },
+    "frontMatter": [
+      { "key": "declaration", "numbering": "lower_roman", "title": "DECLARATION" },
+      { "key": "acknowledgements", "numbering": "lower_roman", "title": "ACKNOWLEDGEMENTS" },
+      { "key": "abstract", "numbering": "lower_roman", "title": "EXECUTIVE SUMMARY" },
+      { "key": "toc", "numbering": "lower_roman", "title": "TABLE OF CONTENTS" }
+    ],
+    "chapters": [
+      {
+        "title": "CHAPTER ONE: INTRODUCTION AND BACKGROUND OF THE ORGANIZATION",
+        "topic": "org_background",
+        "sections": [
+          "1.1 Introduction",
+          "1.2 Organization Background and History",
+          "1.3 Main Products and Services",
+          "1.4 Departmental Structure and Attachment Placement"
+        ]
+      },
+      {
+        "title": "CHAPTER TWO: WORK DONE AND LESSONS LEARNT",
+        "topic": "tasks_activities",
+        "sections": [
+          "2.1 Detailed Description of Assigned Duties",
+          "2.2 Specific Tasks Completed",
+          "2.3 Lessons Learnt and New Skills Acquired",
+          "2.4 Link between Classroom Theory and Field Practice"
+        ]
+      },
+      {
+        "title": "CHAPTER THREE: CHALLENGES, CONCLUSION AND RECOMMENDATIONS",
+        "topic": "conclusion",
+        "sections": [
+          "3.1 Challenges Faced During Attachment",
+          "3.2 How Challenges Were Overcome",
+          "3.3 Conclusion",
+          "3.4 Recommendations to Organization and CBE"
+        ]
+      }
+    ],
+    "references": {
+      "style": "APA",
+      "note": "APA 7th Edition format"
+    },
+    "appendices": [
+      { "key": "logbook_form", "title": "Attach Here: Stamped Logbook Attachment Form", "needsUserUpload": true },
+      { "key": "assessment_form", "title": "Attach Here: Field Supervisor Assessment Form", "needsUserUpload": true },
+      { "key": "employer_evaluation", "title": "Attach Here: Employer Confidential Evaluation Form", "needsUserUpload": true },
+      { "key": "log_sheets", "title": "Attach Here: Weekly Log Sheets Signed and Stamped", "needsUserUpload": true }
+    ],
+    "formatting": {
+      "measured": true,
+      "fontFamily": "Arial",
+      "fontSizeBody": "12pt",
+      "lineSpacing": "1.5",
+      "alignment": "justified",
+      "margins": "Standard 2.5cm",
+      "pageNumberingFront": "lower_roman",
+      "pageNumberingBody": "arabic"
+    }
+  },
+  {
+    "id": "ifm-field-report",
+    "institution": "Institute of Finance Management",
+    "scope": {
+      "faculty": null,
+      "department": null,
+      "programmeLevel": "bachelor",
+      "yearOfTraining": "3"
+    },
+    "matching": {
+      "appliesToOtherCoursesOfInstitution": true,
+      "notice": "Standard IFM Field Practical Training Template"
+    },
+    "reportTypeKey": "field-training",
+    "labels": {
+      "reportName": "Field Practical Training Report",
+      "photoLabel": "Figure",
+      "figureListTitle": "List of Figures",
+      "abbreviationsTitle": "List of Acronyms"
+    },
+    "source": {
+      "file": "ifm-guidelines-2024.pdf",
+      "kind": "department_template",
+      "detail": "IFM Department of Computing Guidelines",
+      "pageSize": "A4"
+    },
+    "verification": {
+      "status": "department_template_unverified_date",
+      "note": "Extracted from IFM student attachment handbook"
+    },
+    "cover": {
+      "border": "double line",
+      "labelStyle": "center",
+      "lines": [
+        {
+          "field": "institution.name",
+          "template": "{institution.name|upper}",
+          "style": "bold center 16pt"
+        },
+        {
+          "field": "unit.name",
+          "template": "{unit.name|upper}",
+          "style": "bold center 14pt"
+        },
+        {
+          "field": "department.name",
+          "template": "DEPARTMENT OF {department.name|upper}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "report.title",
+          "template": "{report.title|upper}",
+          "style": "bold center 14pt margin-y"
+        },
+        {
+          "field": "static.by",
+          "template": "BY",
+          "style": "bold center"
+        },
+        {
+          "field": "student.name",
+          "template": "{student.surnameFirst|upper}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "student.regNo",
+          "template": "REG. NO: {student.regNo}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "student.yearInfo",
+          "template": "YEAR {student.yearWords|upper}: {student.yearRoman}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "submission.fulfillment",
+          "template": "SUBMITTED IN PARTIAL FULFILLMENT OF THE REQUIREMENT FOR THE AWARD OF DEGREE OF {programme.name|upper}",
+          "style": "center 11pt margin-y"
+        },
+        {
+          "field": "submission.monthYear",
+          "template": "{submission.monthYear|upper}",
+          "style": "bold center 12pt"
+        }
+      ]
+    },
+    "frontMatter": [
+      { "key": "declaration", "numbering": "lower_roman", "title": "DECLARATION" },
+      { "key": "acknowledgements", "numbering": "lower_roman", "title": "ACKNOWLEDGEMENTS" },
+      { "key": "abstract", "numbering": "lower_roman", "title": "EXECUTIVE SUMMARY" },
+      { "key": "toc", "numbering": "lower_roman", "title": "TABLE OF CONTENTS" },
+      { "key": "list_of_tables", "numbering": "lower_roman", "title": "LIST OF TABLES" },
+      { "key": "list_of_figures", "numbering": "lower_roman", "title": "LIST OF FIGURES" }
+    ],
+    "chapters": [
+      {
+        "title": "CHAPTER ONE: ORGANIZATION BACKGROUND",
+        "topic": "org_background",
+        "sections": [
+          "1.1 Profile of Host Organization",
+          "1.2 Core Functions and Operational Scope",
+          "1.3 Organizational Governance and IT Infrastructure"
+        ]
+      },
+      {
+        "title": "CHAPTER TWO: WEEKLY SUMMARY & PRACTICAL TASKS",
+        "topic": "weekly_summary_table",
+        "sections": [
+          "2.1 Summary of Weekly Activities (Logbook Matrix)",
+          "2.2 Major Technical Projects Executed",
+          "2.3 Technical Tools and Software Frameworks Utilized"
+        ]
+      },
+      {
+        "title": "CHAPTER THREE: LITERATURE REVIEW & PRACTICAL REFLECTION",
+        "topic": "literature_review",
+        "requiresVerifiedReferences": true,
+        "sections": [
+          "3.1 Theoretical Review of Field Core Concepts",
+          "3.2 Practical Reflection: Theory vs Real-World Implementation",
+          "3.3 Standard Compliance and Best Industry Practices"
+        ]
+      },
+      {
+        "title": "CHAPTER FOUR: CHALLENGES AND SKILLS GAINED",
+        "topic": "challenges",
+        "sections": [
+          "4.1 Operational and Technical Challenges",
+          "4.2 Problem Mitigation Strategies",
+          "4.3 Technical and Soft Skills Acquired"
+        ]
+      },
+      {
+        "title": "CHAPTER FIVE: CONCLUSION AND RECOMMENDATIONS",
+        "topic": "conclusion",
+        "sections": [
+          "5.1 Overall Training Conclusion",
+          "5.2 Recommendations to IFM Department",
+          "5.3 Recommendations to the Host Host Company"
+        ]
+      }
+    ],
+    "references": {
+      "style": "APA",
+      "note": "Verified Academic References required for Literature Review"
+    },
+    "appendices": [
+      { "key": "field_photos", "title": "Field Practical Photos", "needsUserUpload": true }
+    ],
+    "formatting": {
+      "measured": true,
+      "fontFamily": "Times New Roman",
+      "fontSizeBody": "12pt",
+      "lineSpacing": "1.5",
+      "alignment": "justified",
+      "margins": "Standard 2.5cm",
+      "pageNumberingFront": "lower_roman",
+      "pageNumberingBody": "arabic"
+    }
+  },
+  {
+    "id": "nit-field-report",
+    "institution": "National Institute of Transport",
+    "scope": {
+      "faculty": null,
+      "department": null,
+      "programmeLevel": "bachelor",
+      "yearOfTraining": null
+    },
+    "matching": {
+      "appliesToOtherCoursesOfInstitution": true,
+      "notice": "Standard NIT Industrial Attachment Format"
+    },
+    "reportTypeKey": "field-training",
+    "labels": {
+      "reportName": "Industrial Attachment Report",
+      "photoLabel": "Figure",
+      "figureListTitle": "List of Figures",
+      "abbreviationsTitle": "List of Abbreviations"
+    },
+    "source": {
+      "file": "nit-attachment-guideline.pdf",
+      "kind": "student_sample",
+      "detail": "NIT Industrial Attachment Handbook",
+      "pageSize": "A4"
+    },
+    "verification": {
+      "status": "student_sample_unverified",
+      "note": "Extracted from verified NIT industrial attachment template"
+    },
+    "cover": {
+      "border": "single thick",
+      "labelStyle": "center",
+      "lines": [
+        {
+          "field": "institution.name",
+          "template": "{institution.name|upper}",
+          "style": "bold center 16pt"
+        },
+        {
+          "field": "unit.name",
+          "template": "{unit.name|upper}",
+          "style": "bold center 14pt"
+        },
+        {
+          "field": "department.name",
+          "template": "DEPARTMENT OF {department.name|upper}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "report.title",
+          "template": "{report.title|upper}",
+          "style": "bold center 14pt margin-y"
+        },
+        {
+          "field": "static.by",
+          "template": "BY",
+          "style": "bold center"
+        },
+        {
+          "field": "student.name",
+          "template": "{student.surnameFirst|upper}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "student.regNo",
+          "template": "REG. NO: {student.regNo}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "submission.fulfillment",
+          "template": "REPORT SUBMITTED IN PARTIAL FULFILLMENT OF THE REQUIREMENTS FOR THE AWARD OF {programme.name|upper}",
+          "style": "center 11pt margin-y"
+        },
+        {
+          "field": "signature.line",
+          "template": "SIGNATURE: ____________________",
+          "style": "center margin-y"
+        },
+        {
+          "field": "submission.monthYear",
+          "template": "{submission.monthYear|upper}",
+          "style": "bold center 12pt"
+        }
+      ]
+    },
+    "frontMatter": [
+      { "key": "declaration", "numbering": "arabic", "title": "DECLARATION" },
+      { "key": "acknowledgements", "numbering": "arabic", "title": "ACKNOWLEDGEMENT" },
+      { "key": "executive_summary", "numbering": "arabic", "title": "EXECUTIVE SUMMARY" },
+      { "key": "toc", "numbering": "arabic", "title": "TABLE OF CONTENTS" }
+    ],
+    "chapters": [
+      {
+        "title": "CHAPTER ONE: INTRODUCTION",
+        "topic": "org_background",
+        "sections": [
+          "1.1 Background of the Host Organization",
+          "1.2 Mission, Vision, and Core Activities",
+          "1.3 Organizational Structure"
+        ]
+      },
+      {
+        "title": "CHAPTER TWO: ATTACHMENT ACTIVITIES AND SKILLS",
+        "topic": "tasks_activities",
+        "sections": [
+          "2.1 Core Tasks Completed During Attachment",
+          "2.2 Equipment and Operational Logistics Handled",
+          "2.3 Technical Knowledge and Practical Skills Acquired"
+        ]
+      },
+      {
+        "title": "CHAPTER THREE: CHALLENGES, CONCLUSION AND RECOMMENDATIONS",
+        "topic": "conclusion",
+        "sections": [
+          "3.1 Operational Challenges Encountered",
+          "3.2 Summary Conclusion",
+          "3.3 Recommendations"
+        ]
+      }
+    ],
+    "references": {
+      "style": "APA",
+      "note": "Standard APA Reference format"
+    },
+    "appendices": [
+      { "key": "logbook", "title": "Industrial Attachment Logbook Record", "needsUserUpload": true }
+    ],
+    "formatting": {
+      "measured": true,
+      "fontFamily": "Calibri",
+      "fontSizeBody": "12pt",
+      "lineSpacing": "1.5",
+      "alignment": "justified",
+      "margins": "Standard 2.5cm",
+      "pageNumberingFront": "arabic",
+      "pageNumberingBody": "arabic"
+    }
+  },
+  {
+    "id": "ardhi-field-report",
+    "institution": "Ardhi University",
+    "scope": {
+      "faculty": null,
+      "department": null,
+      "programmeLevel": "bachelor",
+      "yearOfTraining": null
+    },
+    "matching": {
+      "appliesToOtherCoursesOfInstitution": true,
+      "notice": "Standard Ardhi University Field Training Template"
+    },
+    "reportTypeKey": "field-training",
+    "labels": {
+      "reportName": "Field Practical Training Report",
+      "photoLabel": "Plate",
+      "figureListTitle": "List of Plates",
+      "abbreviationsTitle": "List of Abbreviations"
+    },
+    "source": {
+      "file": "aru-field-guidelines-2024.pdf",
+      "kind": "official_guideline",
+      "detail": "Ardhi University Field Guidelines",
+      "pageSize": "A4"
+    },
+    "verification": {
+      "status": "from_guideline_unverified_date",
+      "note": "Extracted from official Ardhi University prospectus"
+    },
+    "cover": {
+      "border": "none",
+      "labelStyle": "center",
+      "lines": [
+        {
+          "field": "institution.name",
+          "template": "{institution.name|upper}",
+          "style": "bold center 16pt"
+        },
+        {
+          "field": "unit.name",
+          "template": "{unit.name|upper}",
+          "style": "bold center 14pt"
+        },
+        {
+          "field": "department.name",
+          "template": "DEPARTMENT OF {department.name|upper}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "report.title",
+          "template": "{report.title|upper}",
+          "style": "bold center 14pt margin-y"
+        },
+        {
+          "field": "static.by",
+          "template": "BY",
+          "style": "bold center"
+        },
+        {
+          "field": "student.name",
+          "template": "{student.surnameFirst|upper}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "student.regNo",
+          "template": "REG. NO: {student.regNo}",
+          "style": "bold center 12pt"
+        },
+        {
+          "field": "submission.fulfillment",
+          "template": "FIELD PRACTICAL TRAINING REPORT SUBMITTED TO ARDHI UNIVERSITY IN PARTIAL FULFILLMENT FOR THE AWARD OF DEGREE OF {programme.name|upper}",
+          "style": "center 11pt margin-y"
+        },
+        {
+          "field": "submission.monthYear",
+          "template": "{submission.monthYear|upper}",
+          "style": "bold center 12pt"
+        }
+      ]
+    },
+    "frontMatter": [
+      { "key": "declaration", "numbering": "lower_roman", "title": "DECLARATION" },
+      { "key": "acknowledgements", "numbering": "lower_roman", "title": "ACKNOWLEDGEMENTS" },
+      { "key": "abstract", "numbering": "lower_roman", "title": "ABSTRACT" },
+      { "key": "toc", "numbering": "lower_roman", "title": "TABLE OF CONTENTS" },
+      { "key": "list_of_plates", "numbering": "lower_roman", "title": "LIST OF PLATES" }
+    ],
+    "chapters": [
+      {
+        "title": "CHAPTER ONE: INTRODUCTION",
+        "topic": "org_background",
+        "sections": [
+          "1.1 Background of Field Practical Training",
+          "1.2 Location and Environmental Site Context",
+          "1.3 Profile of Host Institution / Firm"
+        ]
+      },
+      {
+        "title": "CHAPTER TWO: SITE SITUATION AND METHODOLOGY",
+        "topic": "site_situation",
+        "sections": [
+          "2.1 Site Topography, Infrastructure and Conditions",
+          "2.2 Data Collection and Survey Methodology",
+          "2.3 Technical Instruments and Software Tools"
+        ]
+      },
+      {
+        "title": "CHAPTER THREE: FIELD ACTIVITIES AND SITE PLATES",
+        "topic": "tasks_activities",
+        "photoHeavy": true,
+        "sections": [
+          "3.1 Detailed Site Activities and Measurements",
+          "3.2 Photographic Plate Documentation and Captions",
+          "3.3 Architectural/Spatial/Engineering Observations"
+        ]
+      },
+      {
+        "title": "CHAPTER FOUR: CONCLUSION AND RECOMMENDATIONS",
+        "topic": "conclusion",
+        "sections": [
+          "4.1 Practical Summary",
+          "4.2 Site and Professional Recommendations"
+        ]
+      }
+    ],
+    "references": {
+      "style": "Harvard",
+      "note": "Harvard Reference Style required"
+    },
+    "appendices": [
+      { "key": "site_plans", "title": "Site Plans and Survey Drawings", "needsUserUpload": true }
+    ],
+    "formatting": {
+      "measured": true,
+      "fontFamily": "Times New Roman",
+      "fontSizeBody": "12pt",
+      "lineSpacing": "1.5",
+      "alignment": "justified",
+      "margins": "Standard 2.5cm",
+      "pageNumberingFront": "lower_roman",
+      "pageNumberingBody": "arabic"
+    }
+  }
+]

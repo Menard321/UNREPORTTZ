@@ -1,0 +1,199 @@
+{
+  "institutions": [
+    {
+      "id": "inst-udsm",
+      "name": "University of Dar es Salaam",
+      "shortName": "UDSM",
+      "type": "university",
+      "country": "Tanzania",
+      "units": [
+        {
+          "id": "unit-udbs",
+          "name": "UDSM Business School",
+          "shortName": "UDBS",
+          "kind": "business_school",
+          "departments": [
+            {
+              "id": "dept-acc",
+              "name": "Accounting",
+              "programmes": [
+                {
+                  "id": "prog-bcom-acc",
+                  "name": "Bachelor of Commerce in Accounting",
+                  "level": "bachelor",
+                  "durationYears": 3
+                },
+                {
+                  "id": "prog-bcom-fin",
+                  "name": "Bachelor of Commerce in Finance",
+                  "level": "bachelor",
+                  "durationYears": 3
+                }
+              ]
+            },
+            {
+              "id": "dept-mkt",
+              "name": "Marketing",
+              "programmes": [
+                {
+                  "id": "prog-bcom-mkt",
+                  "name": "Bachelor of Commerce in Marketing",
+                  "level": "bachelor",
+                  "durationYears": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "unit-coict",
+          "name": "College of Information and Communication Technologies",
+          "shortName": "CoICT",
+          "kind": "college",
+          "departments": [
+            {
+              "id": "dept-cse",
+              "name": "Computer Science and Engineering",
+              "programmes": [
+                {
+                  "id": "prog-bsc-cs",
+                  "name": "Bachelor of Science in Computer Science",
+                  "level": "bachelor",
+                  "durationYears": 3
+                },
+                {
+                  "id": "prog-bsc-bit",
+                  "name": "Bachelor of Science in Business Information Technology",
+                  "level": "bachelor",
+                  "durationYears": 3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inst-cbe",
+      "name": "College of Business Education",
+      "shortName": "CBE",
+      "type": "college",
+      "country": "Tanzania",
+      "units": [
+        {
+          "id": "unit-cbe-dsm",
+          "name": "Main Campus Dar es Salaam",
+          "shortName": "CBE DSM",
+          "kind": "college",
+          "departments": [
+            {
+              "id": "dept-cbe-acc",
+              "name": "Accountancy and Finance",
+              "programmes": [
+                {
+                  "id": "prog-cbe-bacc",
+                  "name": "Bachelor Degree in Accountancy",
+                  "level": "bachelor",
+                  "durationYears": 3
+                },
+                {
+                  "id": "prog-cbe-bproc",
+                  "name": "Bachelor Degree in Procurement and Supply Chain Management",
+                  "level": "bachelor",
+                  "durationYears": 3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inst-ifm",
+      "name": "Institute of Finance Management",
+      "shortName": "IFM",
+      "type": "institute",
+      "country": "Tanzania",
+      "units": [
+        {
+          "id": "unit-ifm-fcim",
+          "name": "Faculty of Computing, Information Systems and Mathematics",
+          "shortName": "FCIM",
+          "kind": "faculty",
+          "departments": [
+            {
+              "id": "dept-ifm-cs",
+              "name": "Computer Science",
+              "programmes": [
+                {
+                  "id": "prog-ifm-bcs",
+                  "name": "Bachelor of Science in Information Technology",
+                  "level": "bachelor",
+                  "durationYears": 3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inst-nit",
+      "name": "National Institute of Transport",
+      "shortName": "NIT",
+      "type": "institute",
+      "country": "Tanzania",
+      "units": [
+        {
+          "id": "unit-nit-stl",
+          "name": "School of Transport and Logistics",
+          "shortName": "STL",
+          "kind": "school",
+          "departments": [
+            {
+              "id": "dept-nit-log",
+              "name": "Logistics and Transport Management",
+              "programmes": [
+                {
+                  "id": "prog-nit-bltm",
+                  "name": "Bachelor Degree in Logistics and Transport Management",
+                  "level": "bachelor",
+                  "durationYears": 3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inst-aru",
+      "name": "Ardhi University",
+      "shortName": "ARU",
+      "type": "university",
+      "country": "Tanzania",
+      "units": [
+        {
+          "id": "unit-aru-sacbi",
+          "name": "School of Earth Sciences, Real Estate, Business and Informatics",
+          "shortName": "SACBI",
+          "kind": "school",
+          "departments": [
+            {
+              "id": "dept-aru-ict",
+              "name": "Computer Systems and Media Technology",
+              "programmes": [
+                {
+                  "id": "prog-aru-bit",
+                  "name": "Bachelor of Science in Information Systems Management",
+                  "level": "bachelor",
+                  "durationYears": 3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
