@@ -1,6 +1,7 @@
 import { apiFetch } from './client';
 import { AcademicReport, ReportStatus, WritingPreferences, EvidenceFile } from '@/types';
 import { MOCK_REPORTS } from '../data/mock-data';
+import { getStoredReports, saveNewReport, getReportById } from '../utils/report-store';
 
 export interface CreateReportPayload {
   title: string;
@@ -23,7 +24,7 @@ export const reportService = {
       const query = status ? `?status=${status}` : '';
       return await apiFetch<AcademicReport[]>(`/reports${query}`);
     } catch {
-      let reports = [...MOCK_REPORTS];
+      let reports = getStoredReports();
       if (status) {
         reports = reports.filter(r => r.status.toLowerCase() === status.toLowerCase());
       }
@@ -35,7 +36,7 @@ export const reportService = {
     try {
       return await apiFetch<AcademicReport>(`/reports/${id}`);
     } catch {
-      return MOCK_REPORTS.find(r => r.id === id);
+      return getReportById(id) || MOCK_REPORTS.find(r => r.id === id);
     }
   },
 
@@ -103,7 +104,7 @@ export const reportService = {
           }
         ]
       };
-      MOCK_REPORTS.unshift(newReport);
+      saveNewReport(newReport);
       return newReport;
     }
   },
@@ -115,10 +116,12 @@ export const reportService = {
         body: JSON.stringify(updates),
       });
     } catch {
-      const idx = MOCK_REPORTS.findIndex(r => r.id === id);
+      const reports = getStoredReports();
+      const idx = reports.findIndex(r => r.id === id);
       if (idx !== -1) {
-        MOCK_REPORTS[idx] = { ...MOCK_REPORTS[idx], ...updates, updatedAt: new Date().toISOString() };
-        return MOCK_REPORTS[idx];
+        const updated = { ...reports[idx], ...updates, updatedAt: new Date().toISOString() };
+        saveNewReport(updated);
+        return updated;
       }
       throw new Error('Report not found');
     }
@@ -131,7 +134,8 @@ export const reportService = {
         body: JSON.stringify({ content }),
       });
     } catch {
-      const report = MOCK_REPORTS.find(r => r.id === reportId);
+      const reports = getStoredReports();
+      const report = reports.find(r => r.id === reportId);
       if (report) {
         const sec = report.sections.find(s => s.id === sectionId);
         if (sec) {
@@ -140,6 +144,7 @@ export const reportService = {
           sec.status = 'reviewed';
         }
         report.updatedAt = new Date().toISOString();
+        saveNewReport(report);
         return report;
       }
       throw new Error('Report or section not found');

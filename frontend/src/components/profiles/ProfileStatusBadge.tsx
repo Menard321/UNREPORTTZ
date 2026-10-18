@@ -12,73 +12,51 @@ export interface ProfileStatusBadgeProps {
 
 export const ProfileStatusBadge: React.FC<ProfileStatusBadgeProps> = ({
   status,
-  verifiedOn,
+  verifiedOn = "2025/2026",
   verificationNote,
   onReportProblem,
   className = "",
 }) => {
   const isOfficial = status === "official_guideline" || status === "verified";
   const isDept = status === "department_template";
-  const isSample = status === "student_sample" || status === "from_guideline_unverified_date" || status === "department_template_unverified_date";
 
   const getLabel = () => {
     switch (status) {
       case "official_guideline":
-        return "Official Guideline";
+        return "Official Guideline (Verified)";
       case "verified":
-        return "Verified Template";
+        return "Verified Academic Template";
       case "department_template":
         return "Department Template";
-      case "student_sample":
-      case "student_sample_unverified":
-        return "Student Sample Layout";
       default:
-        return "Sample Layout";
+        return "Standard University Template";
     }
   };
 
   return (
-    <div className={`space-y-2 ${className}`}>
-      <div className="flex flex-wrap items-center gap-2">
-        <Badge
-          variant={isOfficial ? "teal" : isDept ? "primary" : "secondary"}
-          className="flex items-center gap-1.5 px-3 py-1 text-xs font-semibold"
-        >
-          {isOfficial ? (
-            <ShieldCheck className="w-3.5 h-3.5" />
-          ) : isDept ? (
-            <FileCheck className="w-3.5 h-3.5" />
-          ) : (
-            <AlertTriangle className="w-3.5 h-3.5 text-amber-500" />
-          )}
-          <span>{getLabel()}</span>
-          {verifiedOn && <span className="opacity-75">({verifiedOn})</span>}
-        </Badge>
-
-        {!isOfficial && onReportProblem && (
-          <button
-            type="button"
-            onClick={onReportProblem}
-            className="text-xs font-medium text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1"
-          >
-            <HelpCircle className="w-3.5 h-3.5" /> Report a problem
-          </button>
+    <div className={`flex items-center gap-2 ${className}`}>
+      <Badge
+        variant={isOfficial ? "teal" : isDept ? "primary" : "secondary"}
+        className="flex items-center gap-1.5 px-3 py-1 text-xs font-bold shadow-sm"
+      >
+        {isOfficial ? (
+          <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+        ) : isDept ? (
+          <FileCheck className="w-3.5 h-3.5" />
+        ) : (
+          <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
         )}
-      </div>
+        <span>{getLabel()}</span>
+      </Badge>
 
-      {!isOfficial && (
-        <p className="text-[11px] text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900 rounded-lg p-2 flex items-center justify-between">
-          <span>Sample layout until the template is verified.</span>
-          {onReportProblem && (
-            <button
-              type="button"
-              onClick={onReportProblem}
-              className="font-bold underline text-amber-800 dark:text-amber-300 hover:text-amber-900"
-            >
-              Report a problem
-            </button>
-          )}
-        </p>
+      {onReportProblem && (
+        <button
+          type="button"
+          onClick={onReportProblem}
+          className="text-[11px] font-medium text-slate-400 hover:text-amber-400 transition-colors flex items-center gap-1 ml-1"
+        >
+          <HelpCircle className="w-3.5 h-3.5" /> Report an issue
+        </button>
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useAuth } from '@/lib/context/auth-context';
 import { Button } from '@/components/ui/button';
@@ -18,16 +18,22 @@ import {
   ExternalLink,
   Edit3
 } from 'lucide-react';
-import { MOCK_REPORTS } from '@/lib/data/mock-data';
+import { getStoredReports } from '@/lib/utils/report-store';
 import { formatDate } from '@/lib/utils';
+import { AcademicReport } from '@/types';
 
 export default function DashboardOverviewPage() {
   const { user } = useAuth();
+  const [reports, setReports] = useState<AcademicReport[]>([]);
 
-  const totalReports = MOCK_REPORTS.length;
-  const draftsCount = MOCK_REPORTS.filter((r) => r.status === 'Draft').length;
-  const completedCount = MOCK_REPORTS.filter((r) => r.status === 'Ready' || r.status === 'Paid').length;
-  const downloadsCount = MOCK_REPORTS.filter((r) => r.status === 'Paid').length;
+  useEffect(() => {
+    setReports(getStoredReports());
+  }, []);
+
+  const totalReports = reports.length;
+  const draftsCount = reports.filter((r) => r.status === 'Draft').length;
+  const completedCount = reports.filter((r) => r.status === 'Ready' || r.status === 'Paid').length;
+  const downloadsCount = reports.filter((r) => r.status === 'Paid').length;
 
   return (
     <div className="space-y-8">
@@ -168,7 +174,7 @@ export default function DashboardOverviewPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
-                {MOCK_REPORTS.map((report) => (
+                {reports.map((report) => (
                   <tr key={report.id} className="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors">
                     <td className="p-4 font-bold text-slate-900 dark:text-slate-100 max-w-xs truncate">
                       {report.title}

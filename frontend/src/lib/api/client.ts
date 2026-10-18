@@ -52,7 +52,9 @@ export async function apiFetch<T>(
     if (err instanceof ApiError) {
       throw err;
     }
-    // Network or offline error
-    throw new ApiError(err?.message || 'Network error connecting to UniReportTZ API server', 500);
+    const message = (err?.message === 'Failed to fetch' || err?.name === 'TypeError')
+      ? 'Unable to connect to the UniReportTZ backend server (http://localhost:8000).'
+      : (err?.message || 'Network error connecting to UniReportTZ API server');
+    throw new ApiError(message, 500);
   }
 }

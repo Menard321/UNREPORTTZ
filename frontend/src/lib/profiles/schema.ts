@@ -134,6 +134,14 @@ export interface ReportContext {
   };
   period?: {
     text?: string;
+    startDate?: string;
+    endDate?: string;
+    durationWeeks?: string;
+  };
+  logbook?: {
+    fileName?: string;
+    fileSize?: number;
+    attached?: boolean;
   };
   supervisor?: {
     academic?: { name?: string };

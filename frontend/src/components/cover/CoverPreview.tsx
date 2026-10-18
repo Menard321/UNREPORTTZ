@@ -6,7 +6,8 @@ import { bindCoverLines, BoundCoverLine } from "@/lib/cover/bind";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { AlertTriangle, Edit2, RotateCcw, Image, CheckCircle2, Lock } from "lucide-react";
+import { AlertTriangle, Edit2, RotateCcw, Image as ImageIcon, CheckCircle2, Lock } from "lucide-react";
+import catalogData from "@/data/catalog.json";
 
 interface CoverPreviewProps {
   profile: ProfileType;
@@ -30,6 +31,23 @@ export const CoverPreview: React.FC<CoverPreviewProps> = ({
 
   const coverConfig = profile.cover || { lines: [], border: "none" };
   const { boundLines, missingRequiredFields } = bindCoverLines(coverConfig.lines, context, overrides);
+
+  // Auto-resolve official university logo from catalog.json
+  const instNameLower = (context.institutionName || "").toLowerCase();
+  const instList: any[] = Array.isArray(catalogData)
+    ? catalogData
+    : (catalogData as any)?.default && Array.isArray((catalogData as any).default)
+    ? (catalogData as any).default
+    : (catalogData as any)?.institutions || [];
+
+  const matchedCatalogInst = instList.find(
+    (inst: any) =>
+      inst?.name?.toLowerCase() === instNameLower ||
+      inst?.shortName?.toLowerCase() === instNameLower ||
+      (instNameLower && inst?.shortName && instNameLower.includes(inst.shortName.toLowerCase())) ||
+      (instNameLower && inst?.name && inst.name.toLowerCase().includes(instNameLower))
+  );
+  const effectiveLogoUrl = uploadedLogoUrl || matchedCatalogInst?.logoUrl;
 
   const handleStartOverride = (field: string, currentVal: string) => {
     setEditingField(field);
@@ -128,11 +146,15 @@ export const CoverPreview: React.FC<CoverPreviewProps> = ({
                   {/* Empty Logo Slot or Rendered Logo */}
                   {line.template === "" || line.field === "logo" ? (
                     <div className="my-4 flex flex-col items-center justify-center">
-                      {uploadedLogoUrl ? (
-                        <img src={uploadedLogoUrl} alt="Institution Logo" className="h-24 w-auto object-contain" />
+                      {effectiveLogoUrl ? (
+                        <img
+                          src={effectiveLogoUrl}
+                          alt={`${context.institutionName || 'University'} Official Crest`}
+                          className="h-28 w-auto max-w-[160px] object-contain mx-auto py-2"
+                        />
                       ) : (
                         <div className="w-24 h-24 border-2 border-dashed border-slate-300 rounded-lg flex flex-col items-center justify-center text-slate-400 text-xs p-2 text-center bg-slate-50">
-                          <Image className="w-6 h-6 mb-1 text-slate-400" />
+                          <ImageIcon className="w-6 h-6 mb-1 text-slate-400" />
                           <span>Institution Logo Slot</span>
                         </div>
                       )}

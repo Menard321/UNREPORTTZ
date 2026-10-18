@@ -1,21 +1,26 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { PlusCircle, Search, Edit3, ExternalLink, Download, CreditCard } from 'lucide-react';
-import { MOCK_REPORTS } from '@/lib/data/mock-data';
+import { getStoredReports } from '@/lib/utils/report-store';
 import { formatDate } from '@/lib/utils';
-import { ReportStatus } from '@/types';
+import { AcademicReport } from '@/types';
 
 export default function MyReportsPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
+  const [reports, setReports] = useState<AcademicReport[]>([]);
 
-  const filteredReports = MOCK_REPORTS.filter((r) => {
+  useEffect(() => {
+    setReports(getStoredReports());
+  }, []);
+
+  const filteredReports = reports.filter((r) => {
     const matchesSearch = r.title.toLowerCase().includes(searchTerm.toLowerCase()) || r.universityName.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesStatus = statusFilter === 'all' || r.status.toLowerCase() === statusFilter.toLowerCase();
     return matchesSearch && matchesStatus;
